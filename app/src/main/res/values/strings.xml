@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CommandProject</string>
+    <string name="hint"><font size="18">Напишіть повідомлення</font></string>
+</resources>
