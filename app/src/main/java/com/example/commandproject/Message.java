@@ -1,53 +1,33 @@
 package com.example.commandproject;
 
+import java.text.SimpleDateFormat;
+
 public class Message {
 
-    String message;
-    String senderId;
-    long timestamp;
-    String currenttime;
+    private static final SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm");
+    private String message;
+    private boolean isSentByCurrentUser;
+    private long timeStamp;
 
-
-    public Message() {
-    }
-
-
-    public Message(String message, String senderId, long timestamp, String currenttime) {
+    public Message(String message, boolean isSentByCurrentUser, long timeStamp) {
         this.message = message;
-        this.senderId = senderId;
-        this.timestamp = timestamp;
-        this.currenttime = currenttime;
+        this.isSentByCurrentUser = isSentByCurrentUser;
+        this.timeStamp = timeStamp;
     }
 
     public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public boolean isSentByCurrentUser() {
+        return isSentByCurrentUser;
     }
 
-    public String getSenderId() {
-        return senderId;
+    public long getTimeStamp() {
+        return timeStamp;
     }
 
-    public void setSenderId(String senderId) {
-        this.senderId = senderId;
-    }
-
-    public long getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public String getCurrenttime() {
-        return currenttime;
-    }
-
-    public void setCurrenttime(String currenttime) {
-        this.currenttime = currenttime;
+    public String getFormattedTime() {
+        return timeFormat.format(timeStamp);
     }
 }
